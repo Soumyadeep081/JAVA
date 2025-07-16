@@ -17,5 +17,9 @@ public class Variables {
          System.out.println("Range"+range);
          float value=12.5f;
         System.out.println("Value= "+value);
+        char q='\u0051';
+        System.out.println("Character="+q);
+        String str="Hello";
+        System.out.println("String="+str);
     }
 }
