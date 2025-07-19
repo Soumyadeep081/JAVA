@@ -2,6 +2,7 @@ package Array.Questions;
 
 public class Q10 {
     public static void main(String[] args) {
+        //Shuffle the Array:
     int[]nums={2,5,1,3,4,7};
     int n=3;
     for(int num:shuffle(nums,n)){

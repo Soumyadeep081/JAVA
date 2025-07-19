@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Q11 {
     public static void main(String[] args) {
+        //Kids With the Greatest Number of Candies:
         int[] candies={2,3,5,1,3};
         int extraCandy=3;
         int max=0;
