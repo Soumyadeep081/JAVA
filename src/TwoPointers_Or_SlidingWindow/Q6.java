@@ -1,4 +1,4 @@
-package TwoPointers;
+package TwoPointers_Or_SlidingWindow;
 
 import java.util.Arrays;
 

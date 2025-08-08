@@ -1,4 +1,4 @@
-package TwoPointers;
+package TwoPointers_Or_SlidingWindow;
 
 public class Q7 {
     public static void main(String[] args) {

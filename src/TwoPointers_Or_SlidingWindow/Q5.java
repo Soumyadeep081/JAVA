@@ -1,7 +1,6 @@
-package TwoPointers;
+package TwoPointers_Or_SlidingWindow;
 
 import java.util.HashSet;
-import java.util.Hashtable;
 
 public class Q5 {
     public static void main(String[] args) {
