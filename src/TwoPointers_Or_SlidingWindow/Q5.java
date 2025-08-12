@@ -2,6 +2,7 @@ package TwoPointers_Or_SlidingWindow;
 
 import java.util.HashSet;
 
+
 public class Q5 {
     public static void main(String[] args) {
         //Happy Numbers:
@@ -47,5 +48,7 @@ public class Q5 {
             n=square(n);
         }
         return isHappy(n);
+
+
     }
 }
