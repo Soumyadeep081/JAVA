@@ -3,7 +3,7 @@ package Trees.Implementation;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Traversal {
+public class Traversal_Recursive {
     static class Node {
         int data;
         Node left;

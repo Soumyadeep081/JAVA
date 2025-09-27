@@ -17,6 +17,8 @@ public class Q2 {
     }
 
     public static void main(String[] args) {
+       //Maximum height of a tree:
+
         Node root = new Node(1);
         root.left = new Node(2);
         root.right = new Node(3);
