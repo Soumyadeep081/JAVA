@@ -1,20 +1,19 @@
 package Trees.Questions;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Q17 {
-    static class Node {
+public class Q18 {
+    static class Node{
         int data;
-        Node left, right;
-
-        public Node(int data) {
-            this.data = data;
-            this.left = this.right = null;
+        Node left,right;
+        public Node(int data){
+            this.data=data;
+            this.left=this.right=null;
         }
     }
-
     public static void main(String[] args) {
-        //Binary Tree Right Side View:
+        //Binary Tree Left Side view:
 
         Node root = new Node(1);
         root.left = new Node(2);
@@ -28,10 +27,10 @@ public class Q17 {
         f(root,0,ll);
         System.out.println(ll);
     }
-    private static void f(Node root,int level,List<Integer>ll){
+    private static void f(Node root, int level, List<Integer>ll){
         if(root==null)return;
-        if(level==ll.size()) ll.add(root.data);
-        f(root.right,level+1,ll);
+        if(level==ll.size())ll.add(root.data);
         f(root.left,level+1,ll);
+        f(root.right,level+1,ll);
     }
 }
