@@ -3,7 +3,7 @@ package Trees.Questions;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Q10 {
+public class Q31 {
     static class Node{
         int data;
         Node left,right;
@@ -13,7 +13,7 @@ public class Q10 {
         }
     }
     public static void main(String[] args) {
-        //Path to Given Node:
+        //Path Sum ||:
 
         Node root = new Node(1);
         root.left = new Node(2);
@@ -23,19 +23,22 @@ public class Q10 {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
 
-        List<Integer>ll=new ArrayList<>();
-        f(root,ll,7);
-        System.out.println(ll);
+        System.out.println(find(root,8));
     }
-    private static boolean f(Node root, List<Integer> ll, int x){
-        if(root==null)return false;
+    public static List<List<Integer>> find(Node root, int x){
+        List<List<Integer>>out=new ArrayList<>();
+        f(root,new ArrayList<>(),out,x);
+        return out;
+    }
+    private static void f(Node root,List<Integer>ll,List<List<Integer>>out,int x){
+        if(root==null)return;
         ll.add(root.data);
-        if(root.data==x)return true;
-        boolean lf=f(root.left,ll,x);
-        boolean rf=f(root.right,ll,x);
-        if(lf||rf)return true;
+        x-=root.data;
+        if(root.left==null&&root.right==null){
+            if(x==0)out.add(new ArrayList<>(ll));
+        }
+        f(root.left,ll,out,x);
+        f(root.right,ll,out,x);
         ll.removeLast();
-        return false;
-
     }
 }
