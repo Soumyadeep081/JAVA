@@ -1,7 +1,5 @@
 package Greedy.Q12;
 
-import java.util.Arrays;
-import java.util.HashMap;
 
 public class sol {
     public static void main(String[] args) {
