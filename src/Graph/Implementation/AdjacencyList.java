@@ -3,10 +3,10 @@ package Graph.Implementation;
 import java.util.LinkedList;
 
 public class AdjacencyList {
-    static class Graph{
+   public static class Graph{
 
         private int v;
-        private LinkedList<Integer>[] adj;
+        public LinkedList<Integer>[] adj;
 
         public Graph(int v){
             this.v=v;
