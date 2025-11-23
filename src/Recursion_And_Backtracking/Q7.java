@@ -1,8 +1,5 @@
-package Recursion;
+package Recursion_And_Backtracking;
 
-
-import java.util.Collections;
-import java.util.LinkedList;
 
 public class Q7 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Recursion;
+package Recursion_And_Backtracking;
 
 public class Q1 {
     public static void main(String[] args) {

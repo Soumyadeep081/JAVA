@@ -1,4 +1,4 @@
-package Recursion;
+package Recursion_And_Backtracking;
 import java.util.*;
 public class Q26 {
     public static void main(String[] args) {

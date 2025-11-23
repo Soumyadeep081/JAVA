@@ -1,6 +1,4 @@
-package Recursion;
-
-import java.util.Arrays;
+package Recursion_And_Backtracking;
 
 public class Q19 {
     public static void main(String[] args) {
