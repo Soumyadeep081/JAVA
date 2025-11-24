@@ -5,7 +5,7 @@ import java.util.LinkedList;
 public class AdjacencyList {
    public static class Graph{
 
-        private int v;
+        public int v;
         public LinkedList<Integer>[] adj;
 
         public Graph(int v){
