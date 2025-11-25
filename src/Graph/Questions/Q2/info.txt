@@ -1,0 +1,5 @@
+Shortest path in an unweighted graph
+
+Given an unweighted, undirected graph of V nodes and E edges,
+a source node S, and a destination node D, we need to find the
+shortest path from node S to node D in the graph.
