@@ -1,0 +1,13 @@
+//DFS to find the first Island.
+If cell == 1 add it to the queue and mark it as visited and move to its adjacent cells.
+If adjacent cells are also 1 then add them too to the queue and mark them visited as well.
+Repeat this until no more adjacent 1's are left and only adjacent 0's are present.
+This connected component of adjacent 1's is the first island.
+
+
+//BFS to Expand the Island and find the distance from first island to second island.
+Run a loop until queue is empty (i.e. shortest distance form 1 island to next is found).
+Pop from front and check its newR and newC in all directions.
+If newR and newC is already visited then skip else check if its 1 then return current steps.
+else mark newR newC as visited, add them to queue, and repeat this for all dirs.
+steps++ at the end.
