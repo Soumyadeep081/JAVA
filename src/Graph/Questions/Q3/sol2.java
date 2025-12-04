@@ -10,6 +10,7 @@ public class sol2 {
     public static boolean f(int n,int[][]edges,int src,int dest){
         if(src==dest)return true;
 
+        @SuppressWarnings("unchecked")
         List<Integer>[]adj=new ArrayList[n];
         for (int i=0;i<n;i++)adj[i]=new ArrayList<>();
 
@@ -38,6 +39,6 @@ public class sol2 {
                 }
             }
         }
-        return dist[dest]!=0;
+        return visited[dest];
     }
 }
