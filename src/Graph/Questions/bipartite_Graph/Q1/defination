@@ -1,0 +1,22 @@
+A bipartite graph is a graph in which the set of vertices can be divided into two disjoint sets such that:
+
+Every edge connects a vertex from one set to a vertex in the other set
+
+No edge connects two vertices within the same set
+
+Formally, a graph G=(V,E) is bipartite if
+V=U ∪ W, where: U ∩ W=∅
+For every edge (u,v)∈E, either
+u∈U and v∈W, or u∈W and v∈U
+
+#Key properties:-
+->A bipartite graph is 2-colorable (you can color vertices using two
+colors so that adjacent vertices have different colors).
+->A graph is bipartite if and only if it has no odd-length cycle.
+->Trees and even-length cycles are always bipartite.
+
+#Applications:
+1.Scheduling time table
+2.Conflict resolution
+3.Bipartite
+4.Map coloring
