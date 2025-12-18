@@ -1,0 +1,36 @@
+-> Topological Sorting is a linear ordering of vertices of a directed
+acyclic graph (DAG) such that for every directed edge
+
+u→v, vertex u appears before vertex v in the ordering.
+
+#Key points:-
+1. Applies only to Directed Acyclic Graphs (DAGs)
+
+2. Respects dependency relationships
+
+3. There can be more than one valid topological order
+
+4. If a graph contains a cycle, topological sorting is not possible
+
+
+#Formal definition:-
+
+A topological sort of a directed graph G=(V,E) is a permutation of the vertices V
+such that for every edge (u,v)∈E, u precedes v in the ordering.
+
+
+#Common methods to perform it:-
+
+1. BFS-based: Kahn’s Algorithm (using indegree)
+
+2. DFS-based: Using recursion and stack
+
+#Typical applications:-
+
+1.Task scheduling
+
+2.Course schedule problems
+
+3.Cycle detection in directed graph
+
+4.DeadLock detection

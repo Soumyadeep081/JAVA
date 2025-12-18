@@ -1,4 +1,4 @@
-package Graph.Questions.bipartite_Graph.Q1;
+package Graph.Implementation.Bipartite_Graph;
 
 import java.util.*;
 
