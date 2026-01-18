@@ -9,20 +9,23 @@ public class Optimal {
 
         System.out.println(f(a,n));
     }
-    public static int f(int[]a,int n){
-        if(n==1)return a[1];
+    public static long f(int[]a,int n){
+        if(n==1)return a[0];
 
         int count_neg=0,count_zero=0;
         int neg_max=Integer.MIN_VALUE;
         int pos_min=Integer.MAX_VALUE;
 
-        int product=1;
+        long product=1;
         for(int i=0;i<n;i++){
             if(a[i]<0){
                 neg_max=Math.max(neg_max,a[i]);
                 count_neg++;
             }
-            else if(a[i]==0)count_zero++;
+            else if(a[i]==0){
+                count_zero++;
+                continue;
+            }
             else if(a[i]>0){
                 pos_min=Math.min(a[i],pos_min);
             }
