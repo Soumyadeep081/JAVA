@@ -1,0 +1,23 @@
+Approach:-
+
+1. Reverse the graph
+For every directed edge u → v in the original graph, add an edge v → u in the reversed graph.
+This helps us move backward from terminal nodes to nodes that depend on them.
+
+2. Track indegree (actually outdegree of original graph)
+For each node, maintain how many outgoing edges it has in the original graph.
+In the reversed graph, this value behaves like an indegree.
+
+3. Initialize BFS queue
+Push all nodes with inDeg = 0 into the queue.
+These are terminal nodes in the original graph and hence safe.
+
+4. BFS (Topological processing)
+Pop a node from the queue and mark it safe.
+For each of its neighbors in the reversed graph, decrement their inDeg.
+If any neighbor’s inDeg becomes 0, add it to the queue.
+
+5. Collect result
+All nodes processed by BFS are safe.
+Finally, sort them in ascending order as required.
+

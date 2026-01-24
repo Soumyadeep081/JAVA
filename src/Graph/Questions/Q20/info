@@ -1,0 +1,10 @@
+Alien Dictionary
+
+Given a sorted dictionary of an alien language having N words and K starting
+alphabets of a standard dictionary. Find the order of characters in the alien language.
+
+There may be multiple valid orders for a particular test case, thus you may
+return any valid order as a string. The output will be True if the order
+returned by the function is correct, else False denoting an incorrect order.
+If the given arrangement of words is inconsistent with any possible letter ordering,
+return an empty string "".

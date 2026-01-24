@@ -1,0 +1,9 @@
+A node is considered safe if every path starting from it eventually ends at a
+terminal node (a node with no outgoing edges).
+So, instead of directly trying to detect cycles, we can think in reverse:
+
+Terminal nodes are always safe.
+Any node that only leads to safe nodes is also safe.
+Nodes that are part of cycles, or can reach a cycle, are unsafe.
+
+This naturally suggests a topological-style approach, where we start from terminal nodes and move backward.
