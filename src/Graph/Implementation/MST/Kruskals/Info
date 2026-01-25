@@ -1,0 +1,16 @@
+Kruskal’s Minimum Spanning Tree (MST) Algorithm
+
+A minimum spanning tree (MST) or minimum weight spanning tree for a weighted,
+connected, and undirected graph is a spanning tree (no cycles and connects all vertices)
+that has minimum weight. The weight of a spanning tree is the sum of all edges in the tree.
+
+Below are the steps for finding MST using Kruskal's algorithm:
+
+1. Sort all the edges in a non-decreasing order of their weight.
+2. Pick the smallest edge. Check if it forms a cycle with the spanning tree formed so far.
+If the cycle is not formed, include this edge. Else, discard it.  It uses the Disjoint Sets to detect cycles.
+3. Repeat step 2 until there are (V-1) edges in the spanning tree.
+
+It picks the minimum weighted edge at first and the maximum weighted edge at last. Thus we
+can say that it makes a locally optimal choice in each step in order to find the optimal solution.
+Hence this is a Greedy Algorithm.
