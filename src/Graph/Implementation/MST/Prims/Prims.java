@@ -1,50 +1,73 @@
 package Graph.Implementation.MST.Prims;
 
-import java.util.*;
 
-public class Prims{
-    int minKey(int[] key,Boolean[] mstSet){
-        int min=Integer.MAX_VALUE,minIndex=-1;
-        for(int v=0;v<mstSet.length;v++){
-            if(!mstSet[v]&&key[v]<min){
-                min=key[v];
-                minIndex=v;
-            }
-        }
-        return minIndex;
+import java.util.*;
+public class Prims {
+static class Pair {
+    int node;
+    int distance;
+    public Pair(int distance, int node) {
+        this.node = node;
+        this.distance = distance;
     }
-    void printMST(int[] parent,int[][] graph){
-        System.out.println("Edge \tWeight");
-        for(int i=1;i<graph.length;i++){
-            System.out.println(parent[i]+" - "+i+"\t"+graph[parent[i]][i]);
-        }
-    }
-    void primMST(int[][] graph){
-        int V=graph.length;
-        int[] parent=new int[V];
-        int[] key=new int[V];
-        Boolean[] mstSet=new Boolean[V];
-        for(int i=0;i<V;i++){
-            key[i]=Integer.MAX_VALUE;
-            mstSet[i]=false;
-        }
-        key[0]=0;
-        parent[0]=-1;
-        for(int count=0;count<V-1;count++){
-            int u=minKey(key,mstSet);
-            mstSet[u]=true;
-            for(int v=0;v<V;v++){
-                if(graph[u][v]!=0&&!mstSet[v]&&graph[u][v]<key[v]){
-                    parent[v]=u;
-                    key[v]=graph[u][v];
+}
+    static int spanningTree(int V,
+                            List<List<List<Integer>>> adj) {
+        PriorityQueue<Pair> pq =
+                new PriorityQueue<Pair>((x, y) -> x.distance - y.distance);
+
+        int[] vis = new int[V];
+        pq.add(new Pair(0, 0));
+        int sum = 0;
+        while (!pq.isEmpty()) {
+            int wt = pq.peek().distance;
+            int node = pq.peek().node;
+            pq.remove();
+
+            if (vis[node] == 1) continue;
+
+            vis[node] = 1;
+            sum += wt;
+
+            for (int i = 0; i < adj.get(node).size(); i++) {
+                int edW = adj.get(node).get(i).get(1);
+                int adjNode = adj.get(node).get(i).get(0);
+                if (vis[adjNode] == 0) {
+                    pq.add(new Pair(edW, adjNode));
                 }
             }
         }
-        printMST(parent,graph);
+        return sum;
     }
-    public static void main(String[] args){
-        Prims t=new Prims();
-        int[][] graph={{0,2,0,6,0},{2,0,3,8,5},{0,3,0,0,7},{6,8,0,0,9},{0,5,7,9,0}};
-        t.primMST(graph);
+
+
+
+    public static void main(String[] args) {
+        int V = 5;
+        List<List<List<Integer>>> adj = new ArrayList<>();
+        int[][] edges =  {{0, 1, 2}, {0, 2, 1}, {1, 2, 1}, {2, 3, 2}, {3, 4, 1}, {4, 2, 2}};
+
+        for (int i = 0; i < V; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        for (int i = 0; i < 6; i++) {
+            int u = edges[i][0];
+            int v = edges[i][1];
+            int w = edges[i][2];
+
+            List<Integer> tmp1 = new ArrayList<Integer>();
+            List<Integer> tmp2 = new ArrayList<Integer>();
+            tmp1.add(v);
+            tmp1.add(w);
+
+            tmp2.add(u);
+            tmp2.add(w);
+
+            adj.get(u).add(tmp1);
+            adj.get(v).add(tmp2);
+        }
+        int sum = spanningTree(V, adj);
+        System.out.println("The sum of all the edge weights: " + sum);
     }
 }
