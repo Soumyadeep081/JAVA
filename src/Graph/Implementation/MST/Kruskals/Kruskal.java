@@ -1,34 +1,41 @@
 package Graph.Implementation.MST.Kruskals;
 
+import java.util.*;
 import java.util.Arrays;
 import java.util.Comparator;
 public class Kruskal {
     static class DSU {
-        private int[] parent, rank;
+         List<Integer>parent=new ArrayList<>();
+         List<Integer>rank=new ArrayList<>();
 
         public DSU(int n) {
-            parent = new int[n];
-            rank = new int[n];
             for (int i = 0; i < n; i++) {
-                parent[i] = i;
-                rank[i] = 1;
+                parent.add(i);
+                rank.add(0);
             }
         }
 
-        public int find(int i) {
-            if (parent[i] != i) parent[i] = find(parent[i]);
-            return parent[i];
+        public int find(int u) {
+            if(parent.get(u)==u)return u;
+            int ulp=find(parent.get(u));
+            parent.set(u,ulp);
+            return ulp;
         }
 
-        public void union(int x, int y) {
-            int s1 = find(x), s2 = find(y);
-            if (s1 != s2) {
-                if (rank[s1] < rank[s2]) parent[s1] = s2;
-                else if (rank[s1] > rank[s2]) parent[s2] = s1;
-                else {
-                    parent[s2] = s1;
-                    rank[s1]++;
-                }
+        public void union(int u, int v) {
+            int ulp_u=find(u);
+            int ulp_v=find(v);
+            if(ulp_u==ulp_v)return;
+            if(rank.get(ulp_u)<rank.get(ulp_v)){
+                parent.set(ulp_u,ulp_v);
+            }
+            else if(rank.get(ulp_u)>rank.get(ulp_v)){
+                parent.set(ulp_v,ulp_u);
+            }
+            else{
+                parent.set(ulp_v,ulp_u);
+                int rankU=rank.get(ulp_u);
+                rank.set(ulp_u,rankU+1);
             }
         }
     }
