@@ -1,0 +1,3 @@
+It is valid for both directed and undirected graph as ong as edge weight wt>=0.
+It fails if edge weight is negative.
+Graph may contain cycle.

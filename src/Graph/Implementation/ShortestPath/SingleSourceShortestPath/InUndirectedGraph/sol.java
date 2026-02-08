@@ -1,4 +1,4 @@
-package Graph.Questions.Q25;
+package Graph.Implementation.ShortestPath.SingleSourceShortestPath.InUndirectedGraph;
 
 import java.util.*;
 
