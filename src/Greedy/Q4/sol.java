@@ -21,7 +21,7 @@ public class sol {
         for(int i=0;i<start.length;i++){
             ll.add(new pair(start[i],finish[i]));
         }
-        ll.sort(Comparator.comparingInt(a->a.end));
+        ll.sort((a, b) -> a.end - b.end);
 
         int count=1;
         int last=ll.get(0).end;
